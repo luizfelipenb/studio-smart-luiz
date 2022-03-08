@@ -16,6 +16,7 @@ export const GlobalStyle = createGlobalStyle`
          --color-rgba-purple-10: rgba(119, 22, 204, 0.1);
          --color-rgba-purple-20: rgba(119, 22, 204, 0.2);
          --color-rgba-blue: rgba(57, 136, 255, 0.1);
+         --grey:#E5E5E5;
          --black: #333; 
          --black-2: #1d1d1d;
          --white: #fff;

@@ -4,6 +4,8 @@ import ButtonDotted from "./components/ButtonDotted";
 import { IoMdSettings } from "react-icons/io";
 import ButtonSolid from "./components/ButtonSolid";
 import { RiUserAddLine } from "react-icons/ri";
+import { SwitchButton } from "./components/SwitchButton";
+import { AddButton } from "./components/AddButton";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <RiUserAddLine />
         Add List
       </ButtonDotted>
+      <SwitchButton />
+      <AddButton />
     </MainContainer>
   );
 }
