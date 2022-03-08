@@ -7,17 +7,12 @@ export const Container = styled.nav`
   border-radius: 12px;
   padding: 5px;
   width: 100px;
-  color: var(--white);
-  background-color: var(--color-primary);
+  color: var(--color-primary);
+  background-color: rgba(119, 22, 204, 0.1);
   transition: 0.25s;
   gap: 10px;
-  font-weight: 600;
-  div:first-child {
-    button {
-      cursor: pointer;
-      background-color: rgba(255, 255, 255, 0.1);
-    }
-  }
+  font-weight: 500;
+
   div {
     margin: 0, auto;
     width: 100%;
@@ -26,17 +21,25 @@ export const Container = styled.nav`
     justify-content: space-evenly;
 
     button {
-      transition: 0.25s;
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.2rem;
       background-color: transparent;
       border: none;
-      color: var(--white);
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
+      color: var(--color-primary);
+    }
+  }
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    li {
+      margin-left: 0.7rem;
     }
   }
 `;

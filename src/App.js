@@ -6,6 +6,7 @@ import ButtonSolid from "./components/ButtonSolid";
 import { RiUserAddLine } from "react-icons/ri";
 import { SwitchButton } from "./components/SwitchButton";
 import { AddButton } from "./components/AddButton";
+import { FilterButton } from "./components/FilterButton";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       </ButtonDotted>
       <SwitchButton />
       <AddButton />
+      <FilterButton />
     </MainContainer>
   );
 }
