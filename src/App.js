@@ -7,12 +7,14 @@ import { RiUserAddLine } from "react-icons/ri";
 import { SwitchButton } from "./components/SwitchButton";
 import { AddButton } from "./components/AddButton";
 import { FilterButton } from "./components/FilterButton";
+import { Input } from "./components/Input";
+import { InputDescription } from "./components/InputDescription";
+import InputSelectTags from "./components/ModalSelectProject";
 
 function App() {
   return (
     <MainContainer>
       <GlobalStyle />
-
       <ButtonSolid>
         <IoMdSettings />
         Manage account
@@ -24,6 +26,13 @@ function App() {
       <SwitchButton />
       <AddButton />
       <FilterButton />
+      <Input label="Resume" placeholder="Resume" />
+      <InputDescription label="Description" placeholder="Description" />
+      <Input type="select" label="Select">
+        <option value="Select">All category</option>
+      </Input>
+      <InputSelectTags label="Priority" isCategory />
+      <InputSelectTags label="Category" />
     </MainContainer>
   );
 }
