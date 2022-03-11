@@ -12,7 +12,7 @@ export const Container = styled.label`
   justify-content: center;
   align-items: center;
   transition: 0.25s;
-
+  cursor: pointer;
   input {
     width: 100%;
     height: 100%;

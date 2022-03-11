@@ -1,17 +1,27 @@
-import { Container } from "./styles";
+import { Container, HeaderContainer, ListSection } from "./styles";
+
 import logo from "../../assets/logo.svg";
+
 import { ButtonDashed } from "../../components/ButtonDashed";
+import { Lists } from "../../components/Lists";
+import { ModalCreateList } from "../../components/ModalCreateList";
 
 import { MdOutlinePersonAddAlt } from "react-icons/md";
 import { BsArrowLeft } from "react-icons/bs";
 
-import { api } from "../../services/api";
-import { Lists } from "../../components/Lists";
+import { useState } from "react";
+import { useLists } from "../../providers/Lists";
 
 export const Tasks = () => {
+  const [showModalCreateList, setShowModalCreateList] = useState(false);
+  const handleShowModal = (setShowModal) => {
+    setShowModal((prev) => !prev);
+  };
+
+  const { newList } = useLists();
   return (
     <Container>
-      <header>
+      <HeaderContainer>
         <section>
           <div>
             <span>
@@ -40,19 +50,26 @@ export const Tasks = () => {
             <li>Poll</li>
           </ul>
         </section>
-      </header>
+      </HeaderContainer>
 
-      <section>
+      <ListSection>
         <ul>
-          {api.map((list, index) => (
-            <Lists dataList={list} key={index} />
-          ))}
-          <ButtonDashed>
+          {newList !== undefined &&
+            newList.map((list, index) => <Lists dataList={list} key={index} />)}
+          <ButtonDashed
+            type="button"
+            onClick={() => handleShowModal(setShowModalCreateList)}
+          >
             <MdOutlinePersonAddAlt size={20} />
             Add List
           </ButtonDashed>
         </ul>
-      </section>
+      </ListSection>
+      {showModalCreateList && (
+        <ModalCreateList
+          handleShowModal={() => handleShowModal(setShowModalCreateList)}
+        />
+      )}
     </Container>
   );
 };

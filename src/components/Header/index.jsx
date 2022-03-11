@@ -1,4 +1,4 @@
-import { Container } from "./styles";
+import { Container, SectionSearch, SectionUserData } from "./styles";
 import { useNavigation } from "../../providers/Navigation";
 
 import { GoSearch } from "react-icons/go";
@@ -10,13 +10,13 @@ export const Header = () => {
   const { handleShowNav } = useNavigation();
   return (
     <Container>
-      <section>
+      <SectionSearch>
         <button>
           <GoSearch size={23} />
         </button>
         <input type="text" placeholder="Search" />
-      </section>
-      <section>
+      </SectionSearch>
+      <SectionUserData>
         <div>
           <HiOutlineChatAlt2 size={27} />
         </div>
@@ -30,7 +30,7 @@ export const Header = () => {
             <IoMdArrowDropdown size={15} />
           </button>
         </div>
-      </section>
+      </SectionUserData>
     </Container>
   );
 };

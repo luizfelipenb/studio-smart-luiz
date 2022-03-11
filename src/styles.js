@@ -6,4 +6,6 @@ export const MainContainer = styled.main`
   display: flex;
 `;
 
-export const SectionContent = styled.section``;
+export const SectionContent = styled.section`
+  width: 100%;
+`;

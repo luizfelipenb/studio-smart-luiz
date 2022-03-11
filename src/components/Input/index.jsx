@@ -1,6 +1,6 @@
 import { Container, InputContainer } from "./styles";
 
-export const Input = ({ label, type, ...rest }) => {
+export const Input = ({ label, name, type, register, ...rest }) => {
   return (
     <Container>
       <div>
@@ -10,9 +10,9 @@ export const Input = ({ label, type, ...rest }) => {
 
       <InputContainer>
         {type === "select" ? (
-          <select {...rest}></select>
+          <select {...register(name)} {...rest}></select>
         ) : (
-          <input type={type} {...rest} />
+          <input type={type} {...register(name)} {...rest} />
         )}
       </InputContainer>
     </Container>

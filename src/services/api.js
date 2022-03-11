@@ -1,6 +1,12 @@
-export const api = [
-  {
-    name: "To do",
-    //   task: [{ category: "Design", description: "Um card aleatorio" }],
-  },
-];
+export const api = {
+  lists: [
+    {
+      name: "To do",
+      tasks: [{ category: "Design", description: "Um card aleatorio" }],
+    },
+    {
+      name: "Done",
+      tasks: [{ category: "Design", description: "Um card aleatorio" }],
+    },
+  ],
+};
