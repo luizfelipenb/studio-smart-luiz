@@ -18,7 +18,7 @@ export const ModalCreateList = ({ handleShowModal }) => {
       <form onSubmit={handleSubmit(handleOnSubmit)}>
         <section>
           <h3>Create List</h3>
-          <button>X</button>
+          <button onClick={handleShowModal}>X</button>
         </section>
         <section>
           <Input

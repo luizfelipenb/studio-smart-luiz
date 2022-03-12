@@ -1,6 +1,6 @@
 import { Container, InputContainer } from "./styles";
 
-export const InputDescription = ({ label, type, ...rest }) => {
+export const InputDescription = ({ label, type, name, register, ...rest }) => {
   return (
     <Container>
       <div>
@@ -9,7 +9,7 @@ export const InputDescription = ({ label, type, ...rest }) => {
       </div>
 
       <InputContainer>
-        <textarea type={type} {...rest} />
+        <textarea type={type} {...register(name)} {...rest} />
       </InputContainer>
     </Container>
   );

@@ -1,11 +1,11 @@
 import { Input } from "../Input";
 import { Container } from "./styles";
 
-const InputSelectTags = ({ isCategory, label }) => {
+const InputSelectTags = ({ isPriority, name, register }) => {
   return (
     <Container>
-      {!!isCategory ? (
-        <Input type="select" label={label}>
+      {!!isPriority ? (
+        <Input type="select" label="Priority" name={name} register={register}>
           <option value="All Priority" disabled>
             All Priority
           </option>
@@ -16,7 +16,7 @@ const InputSelectTags = ({ isCategory, label }) => {
           <option value="Lowest">Lowest</option>
         </Input>
       ) : (
-        <Input type="select" label={label}>
+        <Input type="select" label="Category" name={name} register={register}>
           <option value="All Category" disabled>
             All Category
           </option>

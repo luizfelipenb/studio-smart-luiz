@@ -2,11 +2,31 @@ export const api = {
   lists: [
     {
       name: "To do",
-      tasks: [{ category: "Design", description: "Um card aleatorio" }],
+      tasks: [
+        {
+          resume: "LP",
+          description: "Um card aleatorio",
+          priority: "Highest",
+          category: "Design",
+        },
+      ],
     },
     {
       name: "Done",
-      tasks: [{ category: "Design", description: "Um card aleatorio" }],
+      tasks: [
+        {
+          resume: "LP",
+          description: "Um card aleatorio",
+          priority: "Highest",
+          category: "Design",
+        },
+        {
+          resume: "LP",
+          description: "Um card aleatorio",
+          priority: "Highest",
+          category: "Design",
+        },
+      ],
     },
   ],
 };

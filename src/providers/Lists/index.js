@@ -5,16 +5,18 @@ const ListsContext = createContext();
 
 export const ListsProvider = ({ children }) => {
   const [newList, setNewList] = useState(api.lists);
-  const [newTask, setNewTask] = useState(newList.tasks);
 
-  console.log(newTask);
-  console.log(newList);
   const addList = (data) => {
     setNewList([...newList, data]);
   };
 
+  const addCardTask = (list, data) => {
+    console.log(list);
+    console.log(data);
+  };
+
   return (
-    <ListsContext.Provider value={{ newList, addList, newTask, setNewTask }}>
+    <ListsContext.Provider value={{ newList, addList, addCardTask }}>
       {children}
     </ListsContext.Provider>
   );

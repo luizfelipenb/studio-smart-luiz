@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.section`
   width: 100vw;
   height: 100vh;
   position: absolute;
@@ -9,7 +9,6 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
   background-color: rgba(0, 0, 0, 0.5);
 
   form {
@@ -18,9 +17,10 @@ export const Container = styled.div`
     align-items: center;
     flex-direction: column;
     width: 900px;
+    height: 734px;
     background: #ffffff;
     border-radius: 4px;
-    height: 310px;
+
     > section {
       width: 95%;
 
@@ -36,6 +36,57 @@ export const Container = styled.div`
           font-weight: bold;
           cursor: pointer;
         }
+      }
+    }
+  }
+`;
+
+export const DataSection = styled.section`
+  display: flex;
+  flex-direction: column;
+`;
+export const PathDiv = styled.div`
+  display: flex;
+  gap: 1.5rem;
+
+  div {
+    :first-child {
+      width: 414px;
+      select {
+        width: 100%;
+      }
+    }
+    :nth-child(2) {
+      width: 414px;
+      select {
+        width: 100%;
+      }
+    }
+  }
+`;
+
+export const DescrpDiv = styled.div`
+  flex-direction: column;
+  > div {
+    width: 852px;
+  }
+`;
+
+export const TagDiv = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  div {
+    width: 414px;
+    select {
+      width: 100%;
+    }
+    :last-child {
+      ::placeholder {
+        color: #808080;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
       }
     }
   }

@@ -4,8 +4,11 @@ import { BsThreeDots } from "react-icons/bs";
 import { CardTask } from "../CardTask";
 import { ButtonSolid } from "../ButtonSolid";
 
-export const Lists = ({ dataList }) => {
+import { ModalCreateTask } from "../../components/ModalCreateTask";
+
+export const Lists = ({ dataList, handleShowModal, showModalCreateTask }) => {
   const card = dataList.tasks;
+
   return (
     <Container>
       <header>
@@ -17,8 +20,14 @@ export const Lists = ({ dataList }) => {
       <CardContainer>
         {card !== undefined &&
           card.map((task, index) => <CardTask data={task} key={index} />)}
-        <ButtonSolid>Add new task</ButtonSolid>
+        <ButtonSolid onClick={handleShowModal}>Add new task</ButtonSolid>
       </CardContainer>
+      {showModalCreateTask && (
+        <ModalCreateTask
+          handleShowModal={handleShowModal}
+          dataList={dataList}
+        />
+      )}
     </Container>
   );
 };

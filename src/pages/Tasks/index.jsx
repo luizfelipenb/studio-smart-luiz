@@ -14,6 +14,7 @@ import { useLists } from "../../providers/Lists";
 
 export const Tasks = () => {
   const [showModalCreateList, setShowModalCreateList] = useState(false);
+  const [showModalCreateTask, setShowModalCreateTask] = useState(false);
   const handleShowModal = (setShowModal) => {
     setShowModal((prev) => !prev);
   };
@@ -55,7 +56,14 @@ export const Tasks = () => {
       <ListSection>
         <ul>
           {newList !== undefined &&
-            newList.map((list, index) => <Lists dataList={list} key={index} />)}
+            newList.map((list, index) => (
+              <Lists
+                dataList={list}
+                handleShowModal={() => handleShowModal(setShowModalCreateTask)}
+                showModalCreateTask={showModalCreateTask}
+                key={index}
+              />
+            ))}
           <ButtonDashed
             type="button"
             onClick={() => handleShowModal(setShowModalCreateList)}

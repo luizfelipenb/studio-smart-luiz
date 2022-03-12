@@ -21,7 +21,9 @@ export const CardTask = ({ data }) => {
           <BsThreeDots size={16} />
         </button>
       </CategoryDiv>
-      <p>{data.desciption}</p>
+      <p>
+        {data.resume}:{data.description}
+      </p>
       <InformationDiv>
         <span>Highest</span>
         <ButtonDashed>
