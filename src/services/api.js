@@ -1,32 +1,7 @@
-export const api = {
-  lists: [
-    {
-      name: "To do",
-      tasks: [
-        {
-          resume: "LP",
-          description: "Um card aleatorio",
-          priority: "Highest",
-          category: "Design",
-        },
-      ],
-    },
-    {
-      name: "Done",
-      tasks: [
-        {
-          resume: "LP",
-          description: "Um card aleatorio",
-          priority: "Highest",
-          category: "Design",
-        },
-        {
-          resume: "LP",
-          description: "Um card aleatorio",
-          priority: "Highest",
-          category: "Design",
-        },
-      ],
-    },
-  ],
-};
+import axios from "axios";
+
+const api = axios.create({
+  baseURL: "https://api-studio-smart.herokuapp.com",
+});
+
+export default api;

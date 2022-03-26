@@ -1,22 +1,31 @@
-import { createContext, useContext, useState } from "react";
-import { api } from "../../services/api";
+import { createContext, useContext, useEffect, useState } from "react";
+import api from "../../services/api";
 
 const ListsContext = createContext();
 
 export const ListsProvider = ({ children }) => {
-  const [newList, setNewList] = useState(api.lists);
+  const [newList, setNewList] = useState([]);
 
   const addList = (data) => {
-    setNewList([...newList, data]);
+    api
+      .post("/studiosmart/create", data)
+      .then((res) => setNewList([...newList, res]));
   };
 
-  const addCardTask = (list, data) => {
-    console.log(list);
-    console.log(data);
+  const deleteList = (name) => {
+    api.delete(`/studiosmart/deletelist/${name}`);
   };
+
+  const addCardTask = (list, data) => {};
+
+  useEffect(() => {
+    api.get("/studiosmart/lists").then((res) => setNewList(res.data));
+  });
 
   return (
-    <ListsContext.Provider value={{ newList, addList, addCardTask }}>
+    <ListsContext.Provider
+      value={{ newList, addList, deleteList, addCardTask }}
+    >
       {children}
     </ListsContext.Provider>
   );
