@@ -34,6 +34,7 @@ export const CardContainer = styled.section`
   justify-content: center;
   align-items: center;
   padding: 1rem;
+  gap: 10px;
   > button {
     margin-top: 1rem;
   }

@@ -16,7 +16,9 @@ export const ListsProvider = ({ children }) => {
     api.delete(`/studiosmart/deletelist/${name}`);
   };
 
-  const addCardTask = (list, data) => {};
+  const addCardTask = (listName, data) => {
+    api.put(`/studiosmart/createtask/${listName}`, data);
+  };
 
   useEffect(() => {
     api.get("/studiosmart/lists").then((res) => setNewList(res.data));

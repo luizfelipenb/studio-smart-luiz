@@ -22,33 +22,33 @@ export const Container = styled.aside`
     cursor: pointer;
   }
   nav {
-    ul {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      li {
-        cursor: pointer;
-        width: 300px;
-        height: 60px;
-        margin-top: 10px;
-        display: flex;
-        gap: 20px;
-        align-items: center;
-        border-radius: 4px;
-        font-weight: 700;
-        font-size: 16px;
-        padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 
-        :active {
-          background-color: var(--color-primary);
-          color: #fff;
-        }
-        :hover {
-          transition: 0.35s;
-          background-color: var(--color-primary);
-          color: #fff;
-        }
+    button {
+      cursor: pointer;
+      width: 300px;
+      height: 60px;
+      margin-top: 10px;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 16px;
+      padding-left: 10px;
+      background-color: transparent;
+      border: none;
+      :focus-within {
+        background-color: var(--color-primary);
+        color: #fff;
+      }
+      :hover {
+        transition: 0.35s;
+        background-color: var(--color-primary);
+        color: #fff;
       }
     }
   }

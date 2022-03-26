@@ -23,7 +23,7 @@ export const ModalCreateTask = ({ handleShowModal, dataList }) => {
     delete task.excluir_list;
     delete task.date;
 
-    addCardTask(dataList, task);
+    addCardTask(dataList.name, task);
     handleShowModal();
   };
 

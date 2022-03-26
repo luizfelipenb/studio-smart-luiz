@@ -22,7 +22,7 @@ export const CardTask = ({ data }) => {
         </button>
       </CategoryDiv>
       <p>
-        {data.resume}:{data.description}
+        <strong>{data.resume}:</strong> {data.description}
       </p>
       <InformationDiv>
         <span>Highest</span>

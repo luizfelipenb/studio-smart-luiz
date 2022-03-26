@@ -26,38 +26,38 @@ export const NavigationBar = () => {
 
       <nav>
         <ul>
-          <li onClick={() => handleChangePage("/", history)}>
+          <button onClick={() => handleChangePage("/", history)}>
             <HiOutlineHome size={23} />
             Dashboard
-          </li>
-          <li>
+          </button>
+          <button>
             <FiMail size={23} />
             Inbox
-          </li>
-          <li>
+          </button>
+          <button>
             <VscCalendar size={23} />
             Calendar
-          </li>
-          <li>
+          </button>
+          <button>
             <MdAddShoppingCart size={23} />
             Ecommerce
-          </li>
-          <li>
+          </button>
+          <button>
             <ImEarth size={23} />
             Social
-          </li>
-          <li>
+          </button>
+          <button>
             <FiUsers size={23} />
             Users
-          </li>
-          <li>
+          </button>
+          <button>
             <GoGraph size={23} />
             Analytics
-          </li>
-          <li onClick={() => handleChangePage("/tasks", history)}>
+          </button>
+          <button onClick={() => handleChangePage("/tasks", history)}>
             <BiSelectMultiple size={23} />
             Task
-          </li>
+          </button>
         </ul>
       </nav>
 
