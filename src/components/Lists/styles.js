@@ -1,10 +1,16 @@
 import styled from "styled-components";
 
 export const Container = styled.li`
-  width: 380px;
+  width: 400px;
   padding: 1rem;
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
   header {
     display: flex;
     flex-direction: row;
@@ -35,6 +41,7 @@ export const CardContainer = styled.section`
   align-items: center;
   padding: 1rem;
   gap: 10px;
+
   > button {
     margin-top: 1rem;
   }

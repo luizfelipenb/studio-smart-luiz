@@ -4,8 +4,13 @@ import { ButtonDashed } from "../ButtonDashed";
 import { AiOutlinePlus } from "react-icons/ai";
 import { MdOutlinePersonAddAlt } from "react-icons/md";
 import { BsThreeDots } from "react-icons/bs";
+import { useLists } from "../../providers/Lists";
+import SettingsPopUp from "../SettingsPopUp";
+import { useState } from "react";
 
 export const CardTask = ({ data }) => {
+  const { deleteTask } = useLists();
+  const [showPopUp, setShowPopUp] = useState(false);
   return (
     <Container>
       <CategoryDiv>
@@ -17,15 +22,18 @@ export const CardTask = ({ data }) => {
             </ButtonDashed>
           </li>
         </ul>
-        <button>
+        <button onClick={() => setShowPopUp(!showPopUp)}>
           <BsThreeDots size={16} />
         </button>
+        {showPopUp && (
+          <SettingsPopUp deleteTask={deleteTask} taskId={data.id} />
+        )}
       </CategoryDiv>
       <p>
         <strong>{data.resume}:</strong> {data.description}
       </p>
       <InformationDiv>
-        <span>Highest</span>
+        <span>{data.priority}</span>
         <ButtonDashed>
           <MdOutlinePersonAddAlt size={17} />
         </ButtonDashed>

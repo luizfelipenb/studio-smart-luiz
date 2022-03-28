@@ -99,14 +99,16 @@ export const HeaderContainer = styled.header`
 `;
 
 export const ListSection = styled.section`
-  width: 100%;
+  max-width: 100%;
   height: 100%;
   background-color: #e5e5e5;
+
   ul {
     width: 100%;
     display: flex;
     max-height: 692px;
     padding: 1rem;
+
     > button {
       margin-top: 2.5rem;
       margin-left: 1rem;

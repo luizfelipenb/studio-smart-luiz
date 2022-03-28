@@ -65,7 +65,7 @@ export const PathDiv = styled.div`
   }
 `;
 
-export const DescrpDiv = styled.div`
+export const DescrptionDiv = styled.div`
   flex-direction: column;
   > div {
     width: 852px;

@@ -3,6 +3,7 @@ import { Input } from "../Input";
 import { useLists } from "../../providers/Lists";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 export const ModalCreateList = ({ handleShowModal }) => {
   const { addList } = useLists();
@@ -10,7 +11,7 @@ export const ModalCreateList = ({ handleShowModal }) => {
   const [inputValue, setInputValue] = useState();
 
   const handleOnSubmit = () => {
-    addList({ name: inputValue, tasks: [] });
+    addList({ id: uuidv4(), name: inputValue, tasks: [] });
     handleShowModal();
   };
   return (

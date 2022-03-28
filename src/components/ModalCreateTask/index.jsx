@@ -2,7 +2,7 @@ import {
   Container,
   DataSection,
   PathDiv,
-  DescrpDiv,
+  DescrptionDiv,
   NavHandleCreate,
   TagDiv,
 } from "./styles";
@@ -13,17 +13,23 @@ import { useLists } from "../../providers/Lists";
 import { useForm } from "react-hook-form";
 import InputSelectTags from "../InputSelectTags";
 
+import { v4 as uuidv4 } from "uuid";
+
 export const ModalCreateTask = ({ handleShowModal, dataList }) => {
-  const { newList, addCardTask } = useLists();
+  const { addCardTask } = useLists();
   const { register, handleSubmit } = useForm();
 
-  const handleOnSubmit = (task) => {
-    delete task.excluir_responsible;
-    delete task.excluir_project;
-    delete task.excluir_list;
-    delete task.date;
-
-    addCardTask(dataList.name, task);
+  const handleOnSubmit = (dataTask) => {
+    const finalDataSent = {
+      id: uuidv4(),
+      category: dataTask.category,
+      description: dataTask.description,
+      priority: dataTask.priority,
+      resume: dataTask.resume,
+      date: dataTask.date,
+    };
+    console.log(finalDataSent);
+    addCardTask(dataList.id, finalDataSent);
     handleShowModal();
   };
 
@@ -50,21 +56,19 @@ export const ModalCreateTask = ({ handleShowModal, dataList }) => {
               name="excluir_list"
               register={register}
             >
-              {newList.map((list, index) => (
-                <option value={list.name} key={index}>
-                  {list.name}
-                </option>
-              ))}
+              <option value={dataList.name} defaultValue={dataList.name}>
+                {dataList.name}
+              </option>
             </Input>
           </PathDiv>
-          <DescrpDiv>
+          <DescrptionDiv>
             <Input label="Resume" name="resume" register={register} />
             <InputDescription
               label="Description"
               name="description"
               register={register}
             />
-          </DescrpDiv>
+          </DescrptionDiv>
           <TagDiv>
             <InputSelectTags name="category" register={register} />
             <InputSelectTags isPriority name="priority" register={register} />

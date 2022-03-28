@@ -6,7 +6,7 @@ const InputSelectTags = ({ isPriority, name, register }) => {
     <Container>
       {!!isPriority ? (
         <Input type="select" label="Priority" name={name} register={register}>
-          <option value="All Priority" disabled>
+          <option value="All Priority" disabled defaultValue="All Priority">
             All Priority
           </option>
           <option value="Highest">Highest</option>
@@ -17,7 +17,7 @@ const InputSelectTags = ({ isPriority, name, register }) => {
         </Input>
       ) : (
         <Input type="select" label="Category" name={name} register={register}>
-          <option value="All Category" disabled>
+          <option value="All Category" disabled defaultValue="All Category">
             All Category
           </option>
           <option value="Desing">Design</option>
