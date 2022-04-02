@@ -20,8 +20,8 @@ export const ListsProvider = ({ children }) => {
     api.put(`/studiosmart/createtask/${id}`, data);
   };
 
-  const deleteTask = (id) => {
-    api.delete(`/studiosmart/deletetask/${id}`);
+  const deleteTask = (taskId, listId) => {
+    api.delete(`/studiosmart/deletetask/${taskId}/fromlist/${listId}`);
   };
   useEffect(() => {
     api.get("/studiosmart/lists").then((res) => setNewList(res.data));

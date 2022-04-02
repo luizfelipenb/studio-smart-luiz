@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         outline: 0;
-        
+       
     }
      :root{
 
@@ -28,6 +28,7 @@ export const GlobalStyle = createGlobalStyle`
         background-color: var(--white);
         color: var(--black-2);
         font-family: 'Mulish', sans-serif;
+        transition: all 0.5s;
      }
 
      body input button{

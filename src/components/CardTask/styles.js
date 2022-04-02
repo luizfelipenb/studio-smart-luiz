@@ -10,7 +10,7 @@ export const Container = styled.section`
   justify-content: space-around;
   p {
     width: 100%;
-    padding: 10px;
+    padding: 7px 10px;
     color: #333;
     font-weight: 500;
     font-size: 16px;

@@ -8,7 +8,7 @@ import { useLists } from "../../providers/Lists";
 import SettingsPopUp from "../SettingsPopUp";
 import { useState } from "react";
 
-export const CardTask = ({ data }) => {
+export const CardTask = ({ data, listId }) => {
   const { deleteTask } = useLists();
   const [showPopUp, setShowPopUp] = useState(false);
   return (
@@ -25,10 +25,14 @@ export const CardTask = ({ data }) => {
         <button onClick={() => setShowPopUp(!showPopUp)}>
           <BsThreeDots size={16} />
         </button>
-        {showPopUp && (
-          <SettingsPopUp deleteTask={deleteTask} taskId={data.id} />
-        )}
       </CategoryDiv>
+      {showPopUp && (
+        <SettingsPopUp
+          deleteTask={deleteTask}
+          taskId={data.id}
+          currentListId={listId}
+        />
+      )}
       <p>
         <strong>{data.resume}:</strong> {data.description}
       </p>

@@ -11,6 +11,7 @@ import { BsArrowLeft } from "react-icons/bs";
 
 import { useState } from "react";
 import { useLists } from "../../providers/Lists";
+import { motion } from "framer-motion";
 
 export const Tasks = () => {
   const [showModalCreateList, setShowModalCreateList] = useState(false);
@@ -21,63 +22,72 @@ export const Tasks = () => {
 
   const { newList } = useLists();
   return (
-    <Container>
-      <HeaderContainer>
-        <section>
-          <div>
-            <span>
-              <BsArrowLeft size={16} />
-            </span>
-            <figure>
-              <img src={logo} alt="" />
-            </figure>
+    <motion.div
+      initial={{ translateX: 1000, opacity: 0 }}
+      animate={{ translateX: 0, opacity: 2 }}
+      exit={{ translateX: 100, opacity: 0 }}
+      transition={{ duration: 1.2 }}
+    >
+      <Container>
+        <HeaderContainer>
+          <section>
             <div>
-              <h2>Studio Smart</h2>
-              <span>In Progress</span>
+              <span>
+                <BsArrowLeft size={16} />
+              </span>
+              <figure>
+                <img src={logo} alt="" />
+              </figure>
+              <div>
+                <h2>Studio Smart</h2>
+                <span>In Progress</span>
+              </div>
             </div>
-          </div>
-          <div>
-            <ButtonDashed>
-              <MdOutlinePersonAddAlt size={20} />
-              Add Member
-            </ButtonDashed>
-          </div>
-        </section>
-        <section>
-          <ul>
-            <li>Boards</li>
-            <li>Timeline</li>
-            <li>To do List</li>
-            <li>Poll</li>
-          </ul>
-        </section>
-      </HeaderContainer>
+            <div>
+              <ButtonDashed>
+                <MdOutlinePersonAddAlt size={20} />
+                Add Member
+              </ButtonDashed>
+            </div>
+          </section>
+          <section>
+            <ul>
+              <li>Boards</li>
+              <li>Timeline</li>
+              <li>To do List</li>
+              <li>Poll</li>
+            </ul>
+          </section>
+        </HeaderContainer>
 
-      <ListSection>
-        <ul>
-          {newList !== undefined &&
-            newList.map((list, index) => (
-              <Lists
-                dataList={list}
-                handleShowModal={() => handleShowModal(setShowModalCreateTask)}
-                showModalCreateTask={showModalCreateTask}
-                key={index}
-              />
-            ))}
-          <ButtonDashed
-            type="button"
-            onClick={() => handleShowModal(setShowModalCreateList)}
-          >
-            <MdOutlinePersonAddAlt size={20} />
-            Add List
-          </ButtonDashed>
-        </ul>
-      </ListSection>
-      {showModalCreateList && (
-        <ModalCreateList
-          handleShowModal={() => handleShowModal(setShowModalCreateList)}
-        />
-      )}
-    </Container>
+        <ListSection>
+          <ul>
+            {newList !== undefined &&
+              newList.map((list, index) => (
+                <Lists
+                  dataList={list}
+                  handleShowModal={() =>
+                    handleShowModal(setShowModalCreateTask)
+                  }
+                  showModalCreateTask={showModalCreateTask}
+                  key={index}
+                />
+              ))}
+            <ButtonDashed
+              type="button"
+              onClick={() => handleShowModal(setShowModalCreateList)}
+            >
+              <MdOutlinePersonAddAlt size={20} />
+              Add List
+            </ButtonDashed>
+          </ul>
+        </ListSection>
+        {showModalCreateList && (
+          <ModalCreateList
+            handleShowModal={() => handleShowModal(setShowModalCreateList)}
+          />
+        )}
+      </Container>
+    </motion.div>
   );
 };

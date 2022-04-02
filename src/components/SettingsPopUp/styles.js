@@ -12,9 +12,8 @@ export const Container = styled.div`
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
   border-radius: 4px;
   gap: 10px;
-  position: fixed;
-  left: ${({ isList }) => (isList ? "50%" : "290px")};
-  top: ${({ isList }) => (isList ? "330px" : "390px")};
+  align-self: flex-end;
+  margin-right: ${({ isList }) => (isList ? "0" : "10px")};
   span {
     display: flex;
     gap: 10px;

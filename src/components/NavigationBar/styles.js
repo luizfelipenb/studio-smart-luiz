@@ -10,9 +10,11 @@ export const Container = styled.aside`
   ${(props) =>
     !!props.showNav
       ? css`
+          transition: all linear 1s;
           display: flex;
         `
       : css`
+          transition: all linear 1s;
           display: none;
         `};
   img {

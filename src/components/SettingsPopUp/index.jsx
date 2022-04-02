@@ -1,14 +1,25 @@
 import { Container } from "./styles";
 import { BiTrash } from "react-icons/bi";
 import { MdModeEditOutline } from "react-icons/md";
-const SettingsPopUp = ({ isList, deleteList, listId, deleteTask, taskId }) => {
+const SettingsPopUp = ({
+  isList,
+  deleteList,
+  listId,
+  deleteTask,
+  taskId,
+  currentListId,
+}) => {
   return (
     <Container isList={isList}>
       <span>
         <MdModeEditOutline size={16} />
         Editar
       </span>
-      <span onClick={() => (isList ? deleteList(listId) : deleteTask(taskId))}>
+      <span
+        onClick={() =>
+          isList ? deleteList(listId) : deleteTask(taskId, currentListId)
+        }
+      >
         <BiTrash size={16} />
         Excluir
       </span>
